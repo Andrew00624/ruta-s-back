@@ -17,6 +17,7 @@ const RouteSchema = new Schema ({
       type:String,
       enum:['Tradicional','Callejera', 'Dulce', 'Economico' , 'Bebidas' , 'Cocina de autor']
     },
+    location:{},
     price:String,
     pictures:[],
     map:String

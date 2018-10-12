@@ -6,6 +6,19 @@ const {verifyToken} = require ('../../helpers/jwt')
 
 
 
+
+router.get('/filter-routes', verifyToken, (req,res,next)=>{
+  const {location, category} = req.query
+  console.log(req.query)
+  //Route.find({$and:[{location:location,category:cat}]})
+  Route.find({category})
+  .then(routes=>{
+    res.status(201).json(routes)
+  })
+  .catch(e=>next(e))
+})
+
+
 router.get('/routes-list',verifyToken,  (req,res,next) => {
   Route.find()
   .then (routes=>{
