@@ -6,7 +6,7 @@ const {verifyToken} = require ('../../helpers/jwt')
 
 
 
-router.get('/route', verifyToken,  (req,res,next)=>{
+router.get('/route/:id', verifyToken,  (req,res,next)=>{
   const {id} = req.params
   Route.findById(id)
   .then (route=>{

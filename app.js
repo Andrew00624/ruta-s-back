@@ -41,7 +41,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
