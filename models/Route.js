@@ -10,16 +10,17 @@ const RouteSchema = new Schema ({
       type:Schema.Types.ObjectId,
       ref:'User'
     },
-    restaurantList:[],
     rating:[],
-    stops:Number,
+    stopsQuantity:Number,
     category: {
       type:String,
       enum:['Tradicional','Callejera', 'Dulce', 'Economico' , 'Bebidas' , 'Cocina de autor']
     },
     location:{},
     price:String,
-    pictures:[],
+    stops:[{
+      type:String
+    }],
     map:String
 
 },{

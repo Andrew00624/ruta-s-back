@@ -22,7 +22,7 @@ router.get('/filter-routes', verifyToken, (req,res,next)=>{
   const {location, category} = req.query
   console.log(req.query)
   //Route.find({$and:[{location:location,category:cat}]})
-  Route.find({category})
+  Route.find({category,location})
   .then(routes=>{
     res.status(201).json(routes)
   })
