@@ -6,7 +6,12 @@ const {generateToken,verifyToken} = require ('../../helpers/jwt')
 
 
 router.get ('/my-profile',verifyToken,(req,res,next)=>{
-  res.send ('Solo Usuarios Logueados' + req.user.username)
+  User.findById(req.user._id).populate('routes')
+  .then(user => {
+    console.log(user)
+    res.status(200).json({user})
+  })
+  
 })
 
 
