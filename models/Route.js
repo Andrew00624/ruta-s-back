@@ -25,7 +25,8 @@ const RouteSchema = new Schema ({
         lng:Number,
         rating:String,
         website:String,
-        international_phone_number:Number
+        international_phone_number:Number,
+        url:String
       }
     ],
     map:String
