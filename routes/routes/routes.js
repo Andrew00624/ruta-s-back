@@ -5,7 +5,6 @@ const User = require ('../../models/User')
 const {verifyToken} = require ('../../helpers/jwt')
 
 
-
 router.get('/route/:id', verifyToken,  (req,res,next)=>{
   const {id} = req.params
   Route.findById(id)
@@ -43,6 +42,7 @@ router.get('/routes-list',verifyToken,  (req,res,next) => {
 
 router.post('/create-route', verifyToken,  (req,res,next)=>{
   req.body.creador = req.user._id
+  console.log(req.body)
   Route.create(req.body)
   .then (route=>{
     res.status(201).json(route)

@@ -14,13 +14,20 @@ const RouteSchema = new Schema ({
     stopsQuantity:Number,
     category: {
       type:String,
-      enum:['Tradicional','Callejera', 'Dulce', 'Economico' , 'Bebidas' , 'Cocina de autor']
+      enum:['Tradicional','Callejera', 'Dulce', 'Economico' , 'Bebidas' , 'Chef']
     },
     location:{},
     price:String,
-    stops:[{
-      type:String
-    }],
+    stops:[
+      {
+        name:String,
+        lat:Number,
+        lng:Number,
+        rating:String,
+        website:String,
+        international_phone_number:Number
+      }
+    ],
     map:String
 
 },{
